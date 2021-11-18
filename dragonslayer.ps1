@@ -323,30 +323,30 @@ function Attack-DragonOnOwnWarrior()
 function Speak-ToVillagers()
 {
     Clear-Host
-if ($playerRole -eq "Warrior") {
-    Write-Host ""
-    Write-Host "You speak to Hadrain an elder of the village who explains that FireWing has been seen"
-    Write-Host "resting in a cave nearby after nightfall."
-    Write-Host "He suggests launching a surprise attack after dark. "
-    Write-Host ""
-    Write-Host "What do you do next?"
-    Write-Host ""
-    Write-Host "A) Speak to the detachments commander"
-    Write-Host "B) Ask Hadarin to take you to the cave after dark"
-    Write-Host ""
-}
-else {
-    Write-Host ""
-    Write-Host "You speak to Hadrain an elder of the village who explains that FireWing has been seen"
-    Write-Host "resting in a cave nearby after nightfall."
-    Write-Host "He suggests speaking to the local detachment and launching a surprise attack after dark with their help  "
-    Write-Host ""
-    Write-Host "What do you do next?"
-    Write-Host ""
-    Write-Host "A) Speak to the detachments commander"
-    Write-Host "B) Ask Hadarin to take you to the cave after dark"
-    Write-Host ""
-}
+    if ($playerRole -eq "Warrior") {
+        Write-Host ""
+        Write-Host "You speak to Hadrain an elder of the village who explains that FireWing has been seen"
+        Write-Host "resting in a cave nearby after nightfall."
+        Write-Host "He suggests launching a surprise attack after dark. "
+        Write-Host ""
+        Write-Host "What do you do next?"
+        Write-Host ""
+        Write-Host "A) Speak to the detachments commander"
+        Write-Host "B) Ask Hadarin to take you to the cave after dark"
+        Write-Host ""
+    }
+    else {
+        Write-Host ""
+        Write-Host "You speak to Hadrain an elder of the village who explains that FireWing has been seen"
+        Write-Host "resting in a cave nearby after nightfall."
+        Write-Host "He suggests speaking to the local detachment and launching a surprise attack after dark with their help  "
+        Write-Host ""
+        Write-Host "What do you do next?"
+        Write-Host ""
+        Write-Host "A) Speak to the detachments commander"
+        Write-Host "B) Ask Hadarin to take you to the cave after dark"
+        Write-Host ""
+    }
     #Player has picked up a tip from the local villagers!
     #This will change the outcome of future decisions
     $global:playerDragonTip = $true
@@ -360,19 +360,21 @@ else {
     
     Write-Host ""
 
- Switch ($playerRole) {
-     "Warrior" {
-         Switch ($userResponse) 
-        { 
-            "A" {Speak-ToDetachment}
-            "B" {Attack-DragonOnOwnWarrior} 
+    Switch ($playerRole) {
+        "Warrior" {
+            Switch ($userResponse) 
+            { 
+                "A" {Speak-ToDetachment}
+                "B" {Attack-DragonOnOwnWarrior} 
+            }
         }
-     }
-     "Default" {
-        Switch ($userResponse) 
-        { 
-            "A" {Speak-ToDetachment}
-            "B" {Attack-DragonOnOwn} 
+        
+        Default {
+            Switch ($userResponse) 
+            { 
+                "A" {Speak-ToDetachment}
+                "B" {Attack-DragonOnOwn} 
+            }
         }
     }
 }
@@ -404,5 +406,3 @@ while($true)
         Sleep 3
     }
 }
-
-
