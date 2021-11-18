@@ -6,6 +6,15 @@
 #                                                                                                            #
 ##############################################################################################################
 
+###  ToDo:  Add storyline for Champion 
+###  ToDo:  Add storyline for Zombie 
+###  ToDo:  Add storyline for Wizard 
+###  ToDo:  Add storyline for Innocent Child
+###  ToDo:  Add storyline for Queen of Enchantment
+###  ToDo:  Add storyline for Joker
+###  ToDo:  Modify script to include Steve's template
+
+
 #Game Variables
 $global:playerCharacter = $null
 $global:playerDragonTip = $false
